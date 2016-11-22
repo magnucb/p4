@@ -60,11 +60,13 @@ void ising_prob(string filename_data, string filename_E,
 
     int accepted=0;
     double beta = 1./temp;
+    // initializing randomness
     std::random_device rd;
     std::mt19937_64 gen(rd());
     // Set up the uniform distribution for x \in [[0, 1]
     std::uniform_real_distribution<double> RandomNumberGenerator(0.0,1.0);
 
+    // difference in energies, made accessible
     vec diffE = zeros<mat>(17);
     for( int de =-8; de <= 8; de+=4) diffE(de+8)
               = exp(-de/temp);
@@ -76,6 +78,8 @@ void ising_prob(string filename_data, string filename_E,
     ofstream outfile;
     outfile.open(filename_data);
     outfile << "#msc E E^2 |M| M^2 accepted" << endl;
+    cout << "Is file open?: " << outfile.is_open() << endl;
+    cout << filename_data << endl;
 
     ofstream E_file;
     E_file.open(filename_E);
@@ -83,12 +87,14 @@ void ising_prob(string filename_data, string filename_E,
 
     // here be dragons - montecarlo of metropolis algorithm
     for (int cycle=1; cycle < MCcycles; cycle++){
-        //metropolis(matrix, beta, length, Energy, Magnet, accepted);
 
+        // flipping one spins, trying to get a lower state
         for (int x = 0; x<length; x++){
             for (int y=0; y<length; y++){
+                // deciding on random position in the matrix
                 int i = (int) (RandomNumberGenerator(gen)*(double)length);
                 int j = (int) (RandomNumberGenerator(gen)*(double)length);
+                // finding the energy differential of this spin's position
                 int dE = 2*spins(i,j)*(spins( periodic(i,length, 1), j)
                                       +spins( periodic(i,length,-1), j)
                                       +spins( i, periodic(j,length, 1))
@@ -97,8 +103,8 @@ void ising_prob(string filename_data, string filename_E,
                     spins(i,j) *= -1.0;
                     Energy += (double) dE;
                     Magnet += 2*spins(i, j);
-                }
-            }
+                } // adds the new energy and magnetization in case this state
+            }     //has lower energy than the previous.
         }
 
         exval(0) += Energy;
@@ -106,16 +112,11 @@ void ising_prob(string filename_data, string filename_E,
         exval(2) += fabs(Magnet);
         exval(3) += Magnet*Magnet;
 
-        if (((100000*cycle) % (MCcycles) == 0) || (cycle == MCcycles)){
+        if (((1000*cycle) % (MCcycles) == 0) || (cycle == MCcycles)){
             outfile << cycle;
             for (int i=0; i<4; i++){
                 outfile << " " << exval(i)/cycle;
             }
-//            cout << "Iterative stuff: " << endl;
-//            cout << "<E>    = " << exval(0)/cycle << endl;
-//            cout << "<E**2> = " << exval(1)/cycle << endl;
-//            cout << "<M>    = " << exval(2)/cycle << endl;
-//            cout << "<M**2> = " << exval(3)/cycle << endl;
             outfile << " " << accepted << endl;
         }
         if (cycle >= threshold){
@@ -155,17 +156,15 @@ int main(int argc, char *argv[]){
     int L=2, MCcycles=1e+5, MCthreshold=1e+5;
     string datafilename, matrixargument="up", energyfilename;
 
-    if (argc == 5){
+    if (argc == 4){
         L               = atoi(argv[1]);
         MCcycles        = atoi(argv[2]);
         temp            = atof(argv[3]);
-        datafilename    = argv[4];
-    } if (argc == 6){
+    } if (argc == 5){
         L               = atoi(argv[1]);
-        MCcycles        = atoi(argv[2]);
+        MCcycles        = (int) (argv[2]);
         temp            = atof(argv[3]);
-        datafilename    = argv[4];
-        matrixargument  = argv[5];
+        matrixargument  = argv[4];
     }
     // set up system
     imat spinsystem(L,L);

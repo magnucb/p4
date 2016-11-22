@@ -101,12 +101,12 @@ EnPow2_exp  = en_expect_pow(energies, Z, power=2)
 magn_exp    = magn_expect_pow(magnetic, energies, Z, power=1)
 MagPow2_exp = magn_expect_pow(magnetic, energies, Z, power=2)
 
-print "Z      :", Z
+# print "Z      :", Z
 print "<E>    :", en_exp
-print "<E**2> :", EnPow2_exp
-print "<E>**2 :", en_exp**2
-print "Cv     :", spec_heat(EnPow2_exp, en_exp**2, k_B, T)
+# print "<E**2> :", EnPow2_exp
+# print "<E>**2 :", en_exp**2
 print "<M>    :", magn_exp
-print "<M**2> :", MagPow2_exp
-print "<M>**2 :", magn_exp**2
+# print "<M**2> :", MagPow2_exp
+# print "<M>**2 :", magn_exp**2
+print "Cv     :", spec_heat(EnPow2_exp, en_exp**2, k_B, T)
 print "X      :", magn_mom(MagPow2_exp, magn_exp**2, k_B, T)
