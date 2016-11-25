@@ -1,0 +1,35 @@
+..\data\Prob_L2_mc10_T100_spinup.dat
+Mean energy per MC cycle:         E     = -7.2
+Specific heat:                    Cv    = 5.76
+Mean magnetization per MC cycle: |M|    = 3.63
+Susceptibility:                   X     = 1.44
+
+..\data\Prob_L2_mc100_T100_spinup.dat
+Mean energy per MC cycle:         E     = -7.92
+Specific heat:                    Cv    = 0.6336
+Mean magnetization per MC cycle: |M|    = 3.96
+Susceptibility:                   X     = 0.1584
+
+..\data\Prob_L2_mc1000_T100_spinup.dat
+Mean energy per MC cycle:         E     = -7.984
+Specific heat:                    Cv    = 0.127744
+Mean magnetization per MC cycle: |M|    = 3.992
+Susceptibility:                   X     = 0.031936
+
+..\data\Prob_L2_mc10000_T100_spinup.dat
+Mean energy per MC cycle:         E     = -7.9856
+Specific heat:                    Cv    = 0.114993
+Mean magnetization per MC cycle: |M|    = 3.995
+Susceptibility:                   X     = 0.015575
+
+..\data\Prob_L2_mc100000_T100_spinup.dat
+Mean energy per MC cycle:         E     = -7.982
+Specific heat:                    Cv    = 0.143676
+Mean magnetization per MC cycle: |M|    = 3.99396
+Susceptibility:                   X     = 0.0182035
+
+..\data\Prob_L2_mc1000000_T100_spinup.dat
+Mean energy per MC cycle:         E     = -7.98436
+Specific heat:                    Cv    = 0.124875
+Mean magnetization per MC cycle: |M|    = 3.99479
+Susceptibility:                   X     = 0.0156048

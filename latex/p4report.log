@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.11)  22 NOV 2016 20:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.11)  25 NOV 2016 18:56
 entering extended mode
 **./p4report.tex
 (p4report.tex
@@ -762,115 +762,330 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 121.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (p4report.toc
-Underfull \hbox (badness 2012) in paragraph at lines 2--2
-  [][]\T1/cmr/bx/n/10.95 Studies of phase tran-si-tions in 
- []
-
-
-Underfull \hbox (badness 2809) in paragraph at lines 7--7
- [][] [][]\T1/cmr/m/n/10.95 Making a work-ing nu-mer-i-cal 
- []
-
 )
+<../frontpage.png, id=83, 578.16pt x 433.62pt>
+File: ../frontpage.png Graphic file (type png)
+ <use ../frontpage.png>
+Package pdftex.def Info: ../frontpage.png used on input line 136.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+(p4report.toc
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+ [] [][]\T1/cmr/bx/n/10.95 Making a work-ing nu-mer-i-cal 
+ []
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+ <../frontpage.png>])
 \tf@toc=\write4
 \openout4 = `p4report.toc'.
 
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 158.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\times' on input line 158.
+(hyperref)                removing `math shift' on input line 168.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 158.
+(hyperref)                removing `\times' on input line 168.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 168.
 
 [2]
-Underfull \hbox (badness 3386) in paragraph at lines 215--215
-[]\T1/cmr/bx/n/12 Making a work-ing nu-mer-i-cal
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 225.
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 229--279
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\times' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 225.
+
+[3]
+Underfull \hbox (badness 1132) in paragraph at lines 239--281
 \T1/cmr/m/n/10.95 A run for sev-eral Monte Carlo sim-u-la-tion
  []
 
 
-Underfull \vbox (badness 2134) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 6725) has occurred while \output is active []
 
- [3]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 287.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 296.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\times' on input line 296.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 296.
+
+<../figs/4c/Prob_L20_mc100000_T100_spinup.png, id=154, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T100_spinup.png Graphic file (type png)
+
+<use ../figs/4c/Prob_L20_mc100000_T100_spinup.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T100_spinup.png used on i
+nput line 306.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+ [4]
+<../figs/4c/Prob_L20_mc100000_T120_spinup.png, id=161, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T120_spinup.png Graphic file (type png)
+
+<use ../figs/4c/Prob_L20_mc100000_T120_spinup.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T120_spinup.png used on i
+nput line 311.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T140_spinup.png, id=162, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T140_spinup.png Graphic file (type png)
+
+<use ../figs/4c/Prob_L20_mc100000_T140_spinup.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T140_spinup.png used on i
+nput line 316.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T160_spinup.png, id=163, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T160_spinup.png Graphic file (type png)
+
+<use ../figs/4c/Prob_L20_mc100000_T160_spinup.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T160_spinup.png used on i
+nput line 321.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<../figs/4c/Prob_L20_mc100000_T179_spinup.png, id=164, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T179_spinup.png Graphic file (type png)
+
+<use ../figs/4c/Prob_L20_mc100000_T179_spinup.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T179_spinup.png used on i
+nput line 326.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T199_spinup.png, id=165, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T199_spinup.png Graphic file (type png)
+
+<use ../figs/4c/Prob_L20_mc100000_T199_spinup.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T199_spinup.png used on i
+nput line 331.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T219_spinup.png, id=166, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T219_spinup.png Graphic file (type png)
+
+<use ../figs/4c/Prob_L20_mc100000_T219_spinup.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T219_spinup.png used on i
+nput line 336.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+ [5 <../figs/4c/Prob_L20_mc100000_T100_spinup.png> <../figs/4c/Prob_L20_mc10000
+0_T120_spinup.png> <../figs/4c/Prob_L20_mc100000_T140_spinup.png> <../figs/4c/P
+rob_L20_mc100000_T160_spinup.png> <../figs/4c/Prob_L20_mc100000_T179_spinup.png
+>]
+<../figs/4c/Prob_L20_mc100000_T240_spinup.png, id=181, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T240_spinup.png Graphic file (type png)
+
+<use ../figs/4c/Prob_L20_mc100000_T240_spinup.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T240_spinup.png used on i
+nput line 341.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T100_spinrandom.png, id=182, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T100_spinrandom.png Graphic file (type png)
+<use ../figs/4c/Prob_L20_mc100000_T100_spinrandom.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T100_spinrandom.png used 
+on input line 352.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T120_spinrandom.png, id=183, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T120_spinrandom.png Graphic file (type png)
+<use ../figs/4c/Prob_L20_mc100000_T120_spinrandom.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T120_spinrandom.png used 
+on input line 357.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T140_spinrandom.png, id=184, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T140_spinrandom.png Graphic file (type png)
+<use ../figs/4c/Prob_L20_mc100000_T140_spinrandom.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T140_spinrandom.png used 
+on input line 362.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T160_spinrandom.png, id=185, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T160_spinrandom.png Graphic file (type png)
+<use ../figs/4c/Prob_L20_mc100000_T160_spinrandom.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T160_spinrandom.png used 
+on input line 367.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+ [6 <../figs/4c/Prob_L20_mc100000_T199_spinup.png> <../figs/4c/Prob_L20_mc10000
+0_T219_spinup.png> <../figs/4c/Prob_L20_mc100000_T240_spinup.png> <../figs/4c/P
+rob_L20_mc100000_T100_spinrandom.png> <../figs/4c/Prob_L20_mc100000_T120_spinra
+ndom.png>]
+<../figs/4c/Prob_L20_mc100000_T179_spinrandom.png, id=200, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T179_spinrandom.png Graphic file (type png)
+<use ../figs/4c/Prob_L20_mc100000_T179_spinrandom.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T179_spinrandom.png used 
+on input line 372.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T199_spinrandom.png, id=201, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T199_spinrandom.png Graphic file (type png)
+<use ../figs/4c/Prob_L20_mc100000_T199_spinrandom.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T199_spinrandom.png used 
+on input line 377.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T219_spinrandom.png, id=202, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T219_spinrandom.png Graphic file (type png)
+<use ../figs/4c/Prob_L20_mc100000_T219_spinrandom.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T219_spinrandom.png used 
+on input line 382.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/Prob_L20_mc100000_T240_spinrandom.png, id=203, 578.16pt x 433.62pt>
+File: ../figs/4c/Prob_L20_mc100000_T240_spinrandom.png Graphic file (type png)
+<use ../figs/4c/Prob_L20_mc100000_T240_spinrandom.png>
+Package pdftex.def Info: ../figs/4c/Prob_L20_mc100000_T240_spinrandom.png used 
+on input line 387.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+Underfull \hbox (badness 1005) in paragraph at lines 391--392
+\T1/cmr/m/n/10.95 As with be-fore, when one look closely at
+ []
+
+[7 <../figs/4c/Prob_L20_mc100000_T140_spinrandom.png> <../figs/4c/Prob_L20_mc10
+0000_T160_spinrandom.png> <../figs/4c/Prob_L20_mc100000_T179_spinrandom.png> <.
+./figs/4c/Prob_L20_mc100000_T199_spinrandom.png> <../figs/4c/Prob_L20_mc100000_
+T219_spinrandom.png> <../figs/4c/Prob_L20_mc100000_T240_spinrandom.png>]
+Underfull \hbox (badness 1303) in paragraph at lines 400--400
+[]\T1/cmr/bx/n/12 Results and dis-cus-sion of ac-
+ []
+
+<../figs/4c/acceptedspins_up.png, id=221, 578.16pt x 433.62pt>
+File: ../figs/4c/acceptedspins_up.png Graphic file (type png)
+
+<use ../figs/4c/acceptedspins_up.png>
+Package pdftex.def Info: ../figs/4c/acceptedspins_up.png used on input line 404
+.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/acceptedspins_random.png, id=222, 578.16pt x 433.62pt>
+File: ../figs/4c/acceptedspins_random.png Graphic file (type png)
+
+<use ../figs/4c/acceptedspins_random.png>
+Package pdftex.def Info: ../figs/4c/acceptedspins_random.png used on input line
+ 409.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+Underfull \vbox (badness 1552) has occurred while \output is active []
+
+
+<../figs/4c/acceptedspins_vsTemps.png, id=223, 578.16pt x 433.62pt>
+File: ../figs/4c/acceptedspins_vsTemps.png Graphic file (type png)
+
+<use ../figs/4c/acceptedspins_vsTemps.png>
+Package pdftex.def Info: ../figs/4c/acceptedspins_vsTemps.png used on input lin
+e 417.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4c/acceptedspins_vsTemps_log.png, id=224, 578.16pt x 433.62pt>
+File: ../figs/4c/acceptedspins_vsTemps_log.png Graphic file (type png)
+
+<use ../figs/4c/acceptedspins_vsTemps_log.png>
+Package pdftex.def Info: ../figs/4c/acceptedspins_vsTemps_log.png used on input
+ line 422.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+ [8 <../figs/4c/acceptedspins_up.png> <../figs/4c/acceptedspins_random.png>]
+<../figs/4d/probabilityhistogram_up.png, id=233, 578.16pt x 433.62pt>
+File: ../figs/4d/probabilityhistogram_up.png Graphic file (type png)
+
+<use ../figs/4d/probabilityhistogram_up.png>
+Package pdftex.def Info: ../figs/4d/probabilityhistogram_up.png used on input l
+ine 441.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+
+<../figs/4d/probabilityhistogram_random.png, id=234, 578.16pt x 433.62pt>
+File: ../figs/4d/probabilityhistogram_random.png Graphic file (type png)
+
+<use ../figs/4d/probabilityhistogram_random.png>
+Package pdftex.def Info: ../figs/4d/probabilityhistogram_random.png used on inp
+ut line 446.
+(pdftex.def)             Requested size: 202.35902pt x 151.76927pt.
+ [9 <../figs/4c/acceptedspins_vsTemps.png> <../figs/4c/acceptedspins_vsTemps_lo
+g.png> <../figs/4d/probabilityhistogram_up.png>]
+Overfull \hbox (7.40433pt too wide) in paragraph at lines 453--460
+[][] 
+ []
+
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 474.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+Underfull \hbox (badness 10000) in paragraph at lines 481--483
 []\T1/cmr/m/n/10.95 viewed $\OT1/cmr/m/n/10.95 22[]$ \T1/cmr/m/n/10.95 of Novem
 -ber 2016,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+Underfull \hbox (badness 10000) in paragraph at lines 481--483
 []$\T1/cmtt/m/n/10.95 https : / / github . com / CompPhysics /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+Underfull \hbox (badness 10000) in paragraph at lines 481--483
 \T1/cmtt/m/n/10.95 ComputationalPhysics / blob / master /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+Underfull \hbox (badness 10000) in paragraph at lines 481--483
 \T1/cmtt/m/n/10.95 doc / Programs / ParallelizationMPI /
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 305--307
+[10 <../figs/4d/probabilityhistogram_random.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
 []\T1/cmr/m/n/10.95 viewed $\OT1/cmr/m/n/10.95 22[]$ \T1/cmr/m/n/10.95 of Novem
 -ber 2016,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--307
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
 []$\T1/cmtt/m/n/10.95 http : / / compphysics . github . io /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--307
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
 \T1/cmtt/m/n/10.95 ComputationalPhysics / doc / Lectures /
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
-[4
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 497.
+[11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 497.
  (p4report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 497.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 497.
 Package rerunfilecheck Info: File `p4report.out' has not changed.
-(rerunfilecheck)             Checksum: B073D7AAE081228C872C8F301B573BD1;726.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+(rerunfilecheck)             Checksum: 72182CB4DCD526AEC789794B66CEF718;1488.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 497.
  ) 
 Here is how much of TeX's memory you used:
- 9543 strings out of 493334
- 139122 string characters out of 3136669
- 246919 words of memory out of 3000000
- 12881 multiletter control sequences out of 15000+200000
- 16322 words of font info for 47 fonts, out of 3000000 for 9000
+ 9731 strings out of 493334
+ 145140 string characters out of 3136669
+ 247129 words of memory out of 3000000
+ 12999 multiletter control sequences out of 15000+200000
+ 18921 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,39p,448b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,10n,39p,867b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Boffen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \ectt1095.pk> <C:\Users\Boffen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\ecbx1200.pk> <C:\Users\Boffen\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
@@ -888,9 +1103,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on p4report.pdf (4 pages, 187435 bytes).
+Output written on p4report.pdf (11 pages, 1387563 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 615 PDF objects out of 1000 (max. 8388607)
+ 71 named destinations out of 1000 (max. 500000)
+ 276 words of extra memory for PDF output out of 10000 (max. 10000000)
 

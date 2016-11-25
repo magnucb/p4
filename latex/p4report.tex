@@ -128,23 +128,33 @@
 %	\includegraphics[scale=0.45]{frontpage.png}
 %\end{figure}
 
+%\begin{titlingpage}
+%\begin{center}
+\newpage
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.35]{../frontpage.png}
+\end{figure}
+
 \begin{abstract}
 Empty void %TODO
 \end{abstract}
 
+\newpage
+\tableofcontents
 
+%\end{center}
+%\end{titlingpage}
 
 %\begin{center}
 %\line(1,0){450}
 %\end{center}
 
-\newpage
-\tableofcontents
 
 \newpage
 
-\section{Studies of phase transitions in magnetic systems}
-\subsection{Introduction}
+\section*{Studies of phase transitions in magnetic systems}
+\section{Introduction}
 The aim of this project is to study a widely popular model to simulate phase transitions, the so-called Ising model in two dimensions. At a given critical temperature, this model exhbits a phase transition from a magnetic phase (a system with a finite magnetic moment) to a phase with zero magnetization.
 
 As with all other projects in this course, the important thing is to make the algorithm work. The basic energy calculation of any two-dimensional lattice boils down to this form:
@@ -155,10 +165,10 @@ where $s_k$ and $s_l$ are $\pm 1$ (up or down spin), $N$ is the total spins in t
 
 Through the course of this report, we shall investigate different variations on differently-sized lattices and their modelled physical properties.
 
-\subsection{Analytical model of $2\times2$ lattice}
+\section{Analytical model of $2\times2$ lattice}
 For our first trick, we shall simply investigate a $2\times2$ lattice of spins and its properties: its expectation value for energy and for absolute magnetic moment (mean magnetization), its  specific heat and magnetic susceptibility.
 
-\subsubsection{The underlying math}
+\subsection{The underlying math}
 Firsly, we'll bee needing the partition function
 \begin{align}\label{eq:partitionfunc}
 Z = \sum_i e^{-\beta E_i}
@@ -198,7 +208,7 @@ C_V &= \frac{<E^2> - <E>^2}{k_B T^2} \\
 \chi &= \frac{<M^2> - <M>^2}{k_B T} \nonumber
 \end{align}
 
-\subsubsection{Results}
+\subsection{Results}
 When all of these energy and magnetic combinations are input to a simple python script, the analytical values which we were supposed to investigate, as mentioned in the beginning of the section, may be evaluated:
 
 \begin{table}[H]
@@ -212,11 +222,11 @@ When all of these energy and magnetic combinations are input to a simple python 
 \caption{Analytical values as determined by a python script.}\label{table:analyticalresults}
 \end{table}
 
-\subsection{Making a working numerical model}
+\section{Making a working numerical model for a $2\times2$ lattice}
 Now comes the fun part% DIE DIE DIE!!!!!!!!
 , modelling the previous system numerically, using Monte Carlo style in C++.
 
-\subsubsection{How the script works}
+\subsection{How the script works}
 The script begins by taking in several values of the lattice system, such as lattice length, how many Monte Carlo cycles which we will cycle the system over, temperature for the lattice to hold. The temperature in this case is set to 1 for simplicity's sake. Physical units and confusions apply.
 
 Then the inital lattice matrix is set up with corresponding energy and magnetization quantities; for this problem's purposes we simply start with all spins up.
@@ -225,7 +235,7 @@ At every iteration of the Monte Carlo cycle, the lattice is adjusted according t
 
 Expectation values are yielded from dividing by number of Monte Carlo cycles which the system has had to go through in order to achieve its current properties. The iterated values are stored to data files for later use, expectation values are printed to screen along with specific heat and magnetic susceptibility.
 
-\subsubsection{Results and discussion}
+\subsection{Results and discussion}\label{disc:ana_results}
 A run for several Monte Carlo simulation lengths yielded these values, which are compared with analytical results as shown in table \ref{table:analyticalresults}.
 \begin{table}[H]\center
 \begin{tabular}{|c|r|r|}\hline
@@ -268,6 +278,9 @@ A run for several Monte Carlo simulation lengths yielded these values, which are
 	$\chi$& 0.0182035   & 0.0022 \\ \hline
 \end{tabular}
 \caption{Results after $10^5$ Monte Carlo cycles.}\label{table:4bresults100000}
+\end{table}
+\begin{table}
+[H]\center
 \begin{tabular}{|c|r|r|}\hline
 	Quant.& Result & $\approx\Delta$ Ana.\\ \hline
 	$<E>$ &-7.98436 & 0.0004 \\ \hline
@@ -279,6 +292,180 @@ A run for several Monte Carlo simulation lengths yielded these values, which are
 \end{table}
 
 It would seem that already after having passed 10$^3$ Monte Carlo cycles, the accuracy starts to become surprisingly impressive, and varies less. However, the clear trend is of course that the more one increases the number of cycles for the program to run through, the more accurate results. My own verdict would claim that any run of the script with more than 10$^6$ Monte Carlo cycles would be accurate enough for most purposes.
+
+\section{When a $20\times20$ lattice reach equilibrium}
+Now, let us try to expand our system and investigate some properties that follow. We expand the lattice by a factor of 10 in both dimensions. To find out how this system behaves, it is interesting to investigate how quickly it reaches its equilibrium state, and to investigate if the corresponding phenomena's changes are temperature dependant. 
+\subsection{Modifying the script}
+In order to achieve this, we will have to modify the script slightly. The aforementioned C++ script gains an if-test which initializes correct values for the lattice initialization, and then models the lattice as previously - once per temperature variation. For the purposes of this investigation, a range of 8 temperature values between 1 and 2.4 were chosen.
+\subsection{Spin-up orientation results}
+For a $20\times20$ spin lattice system, 1.2 $\cdot 10^4$ Monte Carlo cycles, with an initial spin-up oriention, for a range of temperatures, the below plots were produced.
+
+All expectation values are normalized to the corresponding expectation value's final calculated value, which would be the corresponding expectation value's nearest value to the analytical value.
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T100_spinup.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T120_spinup.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.2.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T140_spinup.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.4.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T160_spinup.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.6}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T179_spinup.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.79}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T199_spinup.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.99}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T219_spinup.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 2.19}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T240_spinup.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 2.40.}
+\end{figure}
+\subsection{Spin-up orientation discussion}
+When one looks closely at the above section's produced plots, one can see a clear trend that the expectation values' slope smoothes out quite dominantly already at around 13 000 Monte Carlo cycles.
+\subsection{Random spin orientation results}
+For a $20\times20$ spin lattice system, 1.2 $\cdot 10^4$ Monte Carlo cycles, with an initial randomized spin oriention, for a range of temperatures, the below plots were produced.
+
+All expectation values are normalized to the corresponding expectation value's largest value.
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T100_spinrandom.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T120_spinrandom.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.2.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T140_spinrandom.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.4.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T160_spinrandom.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.6}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T179_spinrandom.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.79}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T199_spinrandom.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 1.99}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T219_spinrandom.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 2.19}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/Prob_L20_mc100000_T240_spinrandom.png}
+\caption{A normalized mean energy and magnetic moment view of the iterated evolution of the spin lattice at temperature value of 2.40.}
+\end{figure}
+\subsection{Random spin orientation discussion}\label{disc:stabilize}
+As with before, when one look closely at the above section's produced plots, one can see a clear trend that the expectation values' slope smoothes out quite dominantly already at around 13 000 Monte Carlo cycles.
+
+Some of the systems start off way more erratic, but their behavioural trend still seems very clear: the variation of every system seems to decrease as the system evolves, and for our intents and purposes it seems to stabilize sufficiently after around 13 000 Monte Carlo cycles.
+
+\subsection{Accepted energy shifts}
+Another way to perceive how when a system reaches an equilibrium state, is to investigate when it stops changing. As aforementioned in how the script works, the way this model evolves is to attempt a new lattice's spin configuration and check if this new spin configuration yields a valid energy state of the lattice. If this check passes, the new configuration is accepted as a physical state according to the entropic principle, and the spin configuration's energy state is applied.
+
+By tracking how often a new configuration is applied, it should show where an equilibrium state is reached by determining at which point in the Monte Carlo evolution that the lattice stops evolving - if it reaches a definite equilibrium point. If the lattice isn't able to reach this equilibrium point exactly, intuitively it should continue to evolve with oscillations around the equilibrium point, until the lattice eventually may land on an exact equilibrium point.
+
+\subsection{Results and discussion of accepted configurations' investigation}\label{disc:accepted}
+A plotting of the total number of spin configurations on Monte Carlo evolution produced these two plots, one for each initial spin orientation, with all temperatures included.
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/acceptedspins_up.png}
+\caption{A tracking of accepted number of configurations over total Monte Carlo cycles for all temperatures, with initial spin orientation as up.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/acceptedspins_random.png}
+\caption{A tracking of accepted number of configurations over total Monte Carlo cycles for all temperatures, with initial spin orientation as random.}
+\end{figure}
+As the plots show for both initial spin configurations, the number of accepted spin configurations increase steadily with a constant slope for all temperatures. This seems to indicate that even if the expectation values seem to reach the neighbourhood of an equilibrium point, as indicated by the previous plots, these plots show that the lattice's expectation values continue to oscillate around their expectation values, instead of landing on final values.
+
+As another point worthy of note, one could investigate how the total number of spin configurations behave for the different temperature sets.
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/acceptedspins_vsTemps.png}
+\caption{A visualization of how many accepted spin configurations exist for each temperature variation.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4c/acceptedspins_vsTemps_log.png}
+\caption{A visualization of how many accepted spin configurations exist for each temperature variation, accepted spin configuration count log scaled.}
+\end{figure}
+The two above figures clearly indicate that there are significantly more acceptable spin configurations with increasing temperature for the lattice structure. This means that for a higher temperature setting, the lattice may arrange its spins in significantly more ways that would oscillate around an equilibrium point, even for slight increases in temperatures.
+
+It is also worth noting that the simulated lattices' number of accepted configurations are virtually identical for both an upwards ordered or a randomly ordered initial spin configurations, for all temperatures. This is probably due to the observation and statement that the lattice's configuration system begins to oscillate at a fairly early stage, thus smoothing out differences from initial configurations that for shorter simulations seem much more dominant.
+
+\section{Making a probability estimate of an energy quantity}
+Through all the oscillations of the lattice's spin configurations, some total energies are bound to appear more than once, thus yielding a system of more or less probable energy states, telling us what quantities of energy the lattice would oscillate around.
+
+To achieve this, some modifications on the C++ script need to be done.
+
+\subsection{Modifying the script}
+An if-test is added to the section of the Monte Carlo cycle iteration, so that the necessary values may be stored to a new file - in this case we are not looking for the expectation values themselves, but rather the current energy level and its variance at each iterative step through the time evolution of the lattice.
+
+\subsection{Results and discussion of the probabilities}
+Making a histogram over the energies for an initially upwards and random orientied spin configuration lattice produced the below figures.
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4d/probabilityhistogram_up.png}
+\caption{Energy level histogram for the lattice's time evolution after stabilization, upwards initial spin configuration.}
+\end{figure}
+\begin{figure}
+[H]\center
+\includegraphics[scale=0.35]{../figs/4d/probabilityhistogram_random.png}
+\caption{Energy level histogram for the lattice's time evolution after stabilization, random initial spin configuration.}
+\end{figure}
+For the upward initial spin configuration, this is the collected data - the numbers have been truncated slightly to increase readability:
+
+\begin{table}
+[H]
+\begin{tabular}{|c|c|r|r|r|r|}\hline
+	Spin & T= & En. & \# count & $P(E)$ & $\sigma_E$ \\ \hline
+	Up & 1.0 & -798.0 & 75705 & 0.870 & 9.481\\ \hline 
+	Up & 2.4 & -494.0 & 4767 & 0.055 & 3286 \\ \hline
+	Ran. & 1.0 & -798.0 & 5432 & 0.867 & 9.483 \\ \hline
+	Ran. & 2.4 & -506.0 & 4420 & 0.051 & 4420\\ \hline
+\end{tabular}
+\caption{Table of energy levels' counts and their probabilities of occuring in the lattice.}
+\end{table}
+From these graphs and computed data one may suppose that the system oscillates around certain values, and increasingly lands on different values around its oscillation point with increased temperature - just as I suggested in section \ref{disc:accepted}.
+
+Moreover, the fact that the different initial orientations' direction seem to make no difference to the results further solidifies that the lattices will oscillate around a common energy level, or at least an energy level that is in the neighbourhood of each other. It would seem intuitive with the reasoning used up until now that the lower the temperature setting, then the closer will the lattice's common oscillation point be, as per the above table.
+
+The interesting part of these data, however, is the deviance between the high-temperature lattices' variance in energy. For the initially randomized spin configuration lattice, the variance is significantly larger than the initially upward oriented spin configuration lattice. The variance is an inherent part of the data, related to the full width of half maximum of the distribution, and this point suggests that the randomized lattice has a broader spectrum of oscillatory energy levels at which the lattice lands, further suggesting that 13 000 Monte Carlo cycles may not be enough time to stabilize this high-temperature lattice, as concluded per section \ref{disc:stabilize}.
+
+As a huge \textbf{PS} from my part: as of trouble-shooting this section, I found that the printouts of section  \ref{disc:ana_results} may have had some bad values for the heat capacity $C_V$. I'm not sure what exactly was wrong, for as of calculating the current section's values, well, the numbers that I got were only slightly off from the desired values, and I stumbled over a way of fixing all of it without noticing exactly what I did that fixed it. It works now, though! But the values of that section is too much a bother to re-evalutate, and the following sections' plots are normalized in such a way the behaviour of the heat capacity's graphs should remain identical to what they looked like, even with off-set numbers underlying the scaling, so I choose to go forward with the tasks, rather than knit-pick with trifles.
 
 \section{Appendix}
 \subsection{Code and GitHub}

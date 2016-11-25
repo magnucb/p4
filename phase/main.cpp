@@ -159,69 +159,51 @@ void ising_prob(string filename_data, string filename_E,
 }
 
 int main(int argc, char *argv[]){
-    // engage
-    double temp=1., finaltemp=2.4;
-    int L=2, MCcycles=1e+5, MCthreshold=1.3e+4; // yes, yes, i know.
-    string datafilename, matrixargument="up", energyfilename, tempvar;
+    // engage MPI Magic
+//    MPI_Init(NULL, NULL); //being conscious about environment is good
+//    int numberOfProcesses;// get no. of processes
+//    MPI_Comm_size(MPI_COMM_WORLD, &numberOfProcesses);
+//    int processID;        // get rank of process
+//    MPI_Comm_rank(MPI_COMM_WORLD, &processID);
 
-    if (argc == 2){
-        MCcycles        = atoi(argv[1]);
-    } if (argc == 5){
-        MCcycles        = atoi(argv[1]);
-        L               = atoi(argv[2]);
-        matrixargument  = argv[3];
-        tempvar         = argv[4]; // if this is active, data will be made
-                                   //over a temperature range
-    }
+    double temp=2., finaltemp=2.3; // as per exercise
+    int L[5], MCcycles=1e+5, MCthreshold=1.3e+4; // yes, yes, i know.
+    string datafilename, matrixargument="up", energyfilename;
 
-    // metropolis
-    if (argc == 2){
-        // set up system
-        imat spinsystem(L,L);
-        double Energy = 0, Magnet = 0;
-        makeMatrix(spinsystem, L, matrixargument, Energy, Magnet);
+    L[0] = 20; L[1] = 40; L[2] = 60; L[3] = 100; L[4] = 140;
 
-        cout << "Starting Ising model simulation:" << endl;
-        datafilename = "..\\data\\Prob_L"+to_string(L)
-                              +"_mc"+to_string(MCcycles)
-                               +"_T"+to_string((int) (100*temp)) // scaled
-                            +"_spin"+matrixargument + ".dat";
-        energyfilename = "..\\data\\Energyprob_L"+to_string(L)
-                                  +"_mc"+to_string(MCcycles)
-                                   +"_T"+to_string((int) (100*temp))// scaled
-                                +"_spin"+matrixargument + ".dat";
+    for (int i=0; i<=4; i++){
+        // going over all the sizes of L
 
-        ising_prob(datafilename, energyfilename, spinsystem, L,
-                   Energy, Magnet, temp, MCcycles, MCthreshold);
-
-    } else if (tempvar == "4c"){
-        // cycles over different temperatures for task c)
-        for (double itemp=temp; itemp<=finaltemp; itemp+=1.4){
+        for (double itemp=temp; itemp<=finaltemp; itemp+=0.0125){
             cout << endl;
             // should make around 8 examples
 
-            imat spinsystem(L,L);           // needs to reset the matrix
+            imat spinsystem(L[i],L[i]);     // needs to reset the matrix
             double Energy = 0, Magnet = 0;  //and its values
-            makeMatrix(spinsystem, L, matrixargument, Energy, Magnet);
+            makeMatrix(spinsystem, L[i], matrixargument, Energy, Magnet);
 
             cout << "MCcycle tot: " << MCcycles << endl;
-            cout << "Lattice len: " << L << endl;
+            cout << "Lattice len: " << L[i] << endl;
             cout << "Temperature: " << itemp << endl;
             cout << "Spin orient: " << matrixargument << endl;
-            datafilename = "..\\data\\4c\\Prob_L"+to_string(L)
+            datafilename = "..\\data\\L"+to_string(L[i])
+                                        +"\\Prob_L"+to_string(L[i])
                                   +"_mc"+to_string(MCcycles)
                                    +"_T"+to_string((int) (100*itemp))
                                                         // scaled
                                 +"_spin"+matrixargument + ".dat";
-            energyfilename = "..\\data\\4c\\Energyprob_L"+to_string(L)
+            energyfilename = "..\\data\\L"+to_string(L[i])+
+                                        "\\Energyprob_L"+to_string(L[i])
                                       +"_mc"+to_string(MCcycles)
                                        +"_T"+to_string((int) (100*itemp))
                                                         // scaled
                                     +"_spin"+matrixargument + ".dat";
             // probability run
-            ising_prob(datafilename, energyfilename, spinsystem, L,
+            ising_prob(datafilename, energyfilename, spinsystem, L[i],
                        Energy, Magnet, itemp, MCcycles, MCthreshold);
         }
     }
+//    MPI_Finalize();
 
 }
